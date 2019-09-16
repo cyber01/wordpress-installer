@@ -123,13 +123,13 @@ function nginx_manager(){
 
 function wp_manager(){
 	echo "Self update"
-	${WP_CLI} update --allow-root
+	${WP_CLI} cli update --allow-root
 	echo "Download wordpress Core"
 	${WP_CLI} core download --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html --locale=ru_RU --allow-root
 	echo "Create config for wordpress"
 	${WP_CLI} config create --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html --dbname=${DB_NAME} --dbuser=${DB_LOGIN} --dbpass=${DB_PASS} --dbhost=localhost --dbcharset=utf8mb4 --locale=ru_RU --allow-root
 	echo "Install wordpress"
-	${WP_CLI} core install --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html --url=${DOMAIN} --title=Example site --admin_user=${ADMIN_LOGIN} --admin_password=${ADMIN_PASS} --admin_email=${ADMIN_EMAIL} --allow-root
+	${WP_CLI} core install --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html --url=${DOMAIN} --title="Example site" --admin_user=${ADMIN_LOGIN} --admin_password=${ADMIN_PASS} --admin_email=${ADMIN_EMAIL} --allow-root
 	echo "Install additional plugins: $PLUGIN_LIST"
 	${WP_CLI} plugin install ${PLUGIN_LIST} --activate --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html --allow-root
 	chown -R ${OWNER}:${GROUP} ${WWW_DIR_SITES_DIR}/${DOMAIN}
