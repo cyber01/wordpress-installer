@@ -24,7 +24,7 @@ DB_PASS=`pwgen -cnBv1 20`
 ADMIN_LOGIN=$2
 ADMIN_PASS=`pwgen -cnBv1 20`
 ADMIN_EMAIL=""
-PLUGIN_LIST="wordpress-seo rustolat redirection autooptimize wp-smushit really-simple-ssl"
+PLUGIN_LIST="wordpress-seo rustolat redirection autoptimize wp-smushit really-simple-ssl"
 
 if [ "$(id -u)" != "0" ] 
 then
