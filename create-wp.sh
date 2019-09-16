@@ -139,7 +139,7 @@ function wp_manager(){
 function results(){
 	echo "**************************************"
 	echo "***************[DOMAIN]***************"
-	echo "Installed Wordpress: `${WP_CLI} core version --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html`"
+	echo "Installed Wordpress: `${WP_CLI} core version --path=${WWW_DIR_SITES_DIR}/${DOMAIN}/public_html --allow-root`"
 	echo "DOMAIN: $DOMAIN"
 	echo "ADMIN LOGIN: $ADMIN_LOGIN"
 	echo "ADMIN PASS: $ADMIN_PASS"
